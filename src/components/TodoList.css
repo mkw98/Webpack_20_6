@@ -1,1 +1,4 @@
-TodoList.css
+.TodoList {
+  background-color: white;
+  display: flex;
+}

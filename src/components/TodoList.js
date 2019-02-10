@@ -1,3 +1,1 @@
-import React from 'react';
-
-export default TodoList;
+TodoList.js

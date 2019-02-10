@@ -2,13 +2,21 @@ import React from 'react';
 import uuid from 'uuid'; //polecenie"zaimportuj ją do aplikacji - czy tu?
 import style from './App.css';
 import Title from '../components/Title.js';
-import TodoList from '../components/TodoList';
+import TodoList from '../components/TodoList.js';
 
 class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data: []
+            data: [{
+            text: 'clean room'
+            }, {
+            id: 2,
+            text: 'wash the dishes'
+            }, {
+            id: 3,
+            text: 'feed my cat'
+            }]
         };
     }
     addTodo(val){
@@ -20,14 +28,15 @@ class App extends React.Component {
         this.setState({data});
     }
     removeTodo(id) {
-    const remainder = this.state.data.filter(todo => todo.id !== id);
-    this.setState({data: remainder});
+      const remainder = this.state.data.filter(todo => todo.id !== id);
+      this.setState({data: remainder});
     }
     render() {
     return (
         <div className={style.TodoApp}>
-            <Title />
-            Tutaj pojawią się komponenty naszej aplikacji.
+            <Title 
+              elementsLength={this.state.data.length}
+            />
         </div>
     );
   }
