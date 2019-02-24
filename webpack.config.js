@@ -25,15 +25,13 @@ module.exports = (env) => {
     },
     plugins: plugins,
     module: {
-      rules: [
-          {
+      rules: [{
             test: /\.js$/,
             loader: "babel-loader"
           },
           {
-          test: /\.css$/,
-          use: [
-            {
+            test: /\.css$/,
+            use: [{
               loader: 'style-loader'
             },
             {
@@ -46,7 +44,6 @@ module.exports = (env) => {
         }
       ]
     }
-   }
-  
+  }
 };
 

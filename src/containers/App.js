@@ -9,13 +9,14 @@ class App extends React.Component {
         super(props);
         this.state = {
             data: [{
-            text: 'clean room'
+            id: 1,    
+            text: 'learn javascript'
             }, {
             id: 2,
-            text: 'wash the dishes'
+            text: 'learn react'
             }, {
             id: 3,
-            text: 'feed my cat'
+            text: 'feed my family'
             }]
         };
     }
@@ -37,6 +38,7 @@ class App extends React.Component {
             <Title 
               elementsLength={this.state.data.length}
             />
+        <TodoList taskList={this.state.data} removeTask={this.removeTodo} />    
         </div>
     );
   }
