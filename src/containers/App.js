@@ -38,7 +38,8 @@ class App extends React.Component {
             <Title 
               elementsLength={this.state.data.length}
             />
-        <TodoList taskList={this.state.data} removeTask={this.removeTodo} />    
+            <TodoList taskList={this.state.data} remove={this.removeTodo.bind(this)} 
+            />    
         </div>
     );
   }

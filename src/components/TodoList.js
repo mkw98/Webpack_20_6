@@ -1,17 +1,10 @@
 import React from 'react';
 import style from './TodoList.css';
 
-const TodoList = props => {
-    const list = props.taskList;
-    const task = list.map((task) => 
-        <div key={task.id} className={style.TodoTask}>{task.text}</div>
-    );
-
-    return(
-        <div className={style.TodoList}>
-           {task}
-        </div>
-    );
-}
+const TodoList = props => (
+    <ul className={style.TodoList}>
+        {props.taskList.map(task => <li key={task.id} onClick={() => props.remove(task.id)}>{task.text}</li>)}
+    </ul>
+);
 
 export default TodoList;
